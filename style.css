@@ -27,18 +27,23 @@ h1{
 .todo-box{
   background:white;
   box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.input-section{
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid #ddd;
 }
 
 .input-section input{
-  width:95%;
+  width:100%;
   padding:20px;
   font-size:25px;
   border:none;
   outline:none;
-  border-bottom:1px solid #ddd;
   color:#666;
-
-  
 }
 
 .input-section input::placeholder{
@@ -46,20 +51,31 @@ h1{
   font-style:italic;
 }
 
+#selectAll{
+  border:none;
+  background:transparent;
+  font-size:30px;
+  cursor:pointer;
+  color:#777;
+  margin-left:15px;
+}
+
 #todoList{
   list-style:none;
 }
 
-
-
 #todoList li{
+  display:flex;
+  align-items:center;
+  gap:15px;
   padding:18px 20px;
   border-bottom:1px solid #eee;
   font-size:20px;
   color:#666;
-  display:flex;
-  align-items:center;
-  gap:15px;
+}
+
+#todoList li:hover{
+  background:#fafafa;
 }
 
 #todoList li.completed{
@@ -73,6 +89,36 @@ h1{
   cursor:pointer;
 }
 
+li span{
+  flex:1;
+  margin-left:10px;
+  word-break:break-word;
+}
+
+li input[type="text"]{
+  flex:1;
+  padding:8px 10px;
+  font-size:18px;
+  border:1px solid #ddd;
+  border-radius:5px;
+  outline:none;
+}
+
+.deleteBtn{
+  background:none;
+  border:none;
+  color:red;
+  font-size:22px;
+  cursor:pointer;
+  margin-left:auto;
+  transition:0.2s;
+}
+
+.deleteBtn:hover{
+  color:darkred;
+  transform:scale(1.2);
+}
+
 .bottom{
   display:flex;
   justify-content:space-between;
@@ -80,6 +126,11 @@ h1{
   padding:15px 20px;
   font-size:18px;
   color:#666;
+}
+
+.filters{
+  display:flex;
+  gap:10px;
 }
 
 .filters button,
@@ -90,23 +141,16 @@ h1{
   font-size:16px;
   color:#666;
   padding:5px 10px;
+  border-radius:5px;
+  transition:0.2s;
+}
+
+.filters button:hover,
+#clearBtn:hover{
+  background:#f2f2f2;
 }
 
 .filters .active{
   border:1px solid #d6a5a5;
   border-radius:5px;
 }
-#selectAll{
-  border: none;
-  background: transparent;
-  font-size: 30px;
-  cursor: pointer;
-  /* color: gray;
-  margin-left: 5px;
-  margin-bottom: 10px; */
-
-    position: relative;
-  bottom: 10px;
-   left: 20px;
-}
-
